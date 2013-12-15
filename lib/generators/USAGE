@@ -1,0 +1,9 @@
+Description:
+    Generates the migrations for the Weathervane tables
+
+Example:
+    rails generate weathervane init
+
+    This will create:
+        create_forecasts migration
+        forecast_provider migration
