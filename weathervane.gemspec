@@ -19,6 +19,7 @@ a common forecast model. Thus abstracting out the complexity of dealing with var
   s.add_dependency "rails", "~> 4.0.2"
   s.add_dependency "nokogiri"
   s.add_dependency "nori"
+  s.add_dependency "jbuilder"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "guard-rspec"
