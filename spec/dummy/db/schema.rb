@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131215235900) do
   create_table "forecasts", force: true do |t|
     t.datetime "valid_from"
     t.datetime "valid_until"
+    t.datetime "reference_time"
     t.string   "forecast_provider_name"
     t.float    "latitude"
     t.float    "longitude"

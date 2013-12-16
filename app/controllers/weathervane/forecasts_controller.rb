@@ -5,7 +5,14 @@ module Weathervane
 
     # GET /forecasts/:provider
     def show_for_provider
-      @provider = Weathervane::ForecastProvider.new
+
+      case params[:provider]
+        when 'smhi'
+          @provider = Weathervane::Providers::Smhi
+          @forecasts = @provider.get_forecasts(params[:lat],params[:lon])
+      end
+
+
 
     end
   end
