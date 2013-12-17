@@ -8,7 +8,7 @@ module Weathervane
 
       case params[:provider]
         when 'smhi'
-          @provider = Weathervane::Providers::Smhi
+          @provider = Weathervane::Providers::SMHI
           @forecasts = @provider.get_forecasts(params[:lat],params[:lon])
       end
 

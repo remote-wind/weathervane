@@ -1,47 +1,36 @@
 require 'spec_helper'
 
 module Weathervane
-  describe Providers::Smhi do
+  describe Providers::SMHI do
 
-    describe ".get_forecasts" do
-      let(:uri) { 'http://opendata-download-metfcst.smhi.se/api/category/pmp1g/version/1/geopoint/lat/10/lon/10/data.json' }
-      let(:response) { stub_request(:get, uri) }
+    let(:provider) { Weathervane::Providers::SMHI.new }
+    let(:sample_data) { IO.read( File.dirname( __FILE__ ) + "/smhi_sample_data.json" )}
 
-      it "requests the correct url" do
-        response
-        Providers::Smhi.get_forecasts(10,10)
-        WebMock.should have_requested(:get, uri)
-      end
-
-      it "calls parse_forecasts" do
-        response.to_return(:status => 200, :body => '{}', :headers => {})
-        Providers::Smhi.should_receive(:parse_forecasts).with('{}')
-        Providers::Smhi.get_forecasts(10,10)
-      end
+    specify "required sample data is available" do
+      fn = File.dirname( __FILE__ ) + "/smhi_sample_data.json"
+      expect(File.exists? fn).to be_true
     end
 
-    describe ".parse_forecasts" do
-
-      let(:sample_data) { IO.read( File.dirname( __FILE__ ) + "/smhi_sample_data.json" )}
+    describe "#extract_forecasts" do
 
       it "parses response data as JSON" do
         JSON.should_receive(:parse).with('{}')
-        Providers::Smhi.parse_forecasts('{}')
+        provider.extract_forecasts('{}')
       end
 
       it "handles json parse errors" do
         expect do
-          Providers::Smhi.parse_forecasts('{/')
+          provider.extract_forecasts('{/')
         end.to_not raise_error
       end
 
       it "creates forecasts from json data" do
-        forecasts = Providers::Smhi.parse_forecasts(sample_data)
+        forecasts = provider.extract_forecasts(sample_data)
         expect(forecasts[0]).to be_a_kind_of Weathervane::Forecast
       end
 
       describe "attribute mapping" do
-        subject { Providers::Smhi.parse_forecasts(sample_data)[0] }
+        subject { provider.extract_forecasts(sample_data)[0] }
         its(:valid_from)      { should eq Time.iso8601("2013-12-16T15:00:00Z") }
         its(:valid_until)     { should eq Time.iso8601("2013-12-16T16:00:00Z") }
         its(:reference_time)  { should eq Time.iso8601("2013-12-16T14:00:00Z") }

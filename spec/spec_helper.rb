@@ -15,7 +15,9 @@ Spork.prefork do
   require 'shoulda-matchers'
   require 'webmock/rspec'
   require 'weathervane'
+  require 'factory_girl'
   include Shoulda::Matchers::ActiveModel
+  include FactoryGirl::Syntax::Methods
 end
 
 Spork.each_run do

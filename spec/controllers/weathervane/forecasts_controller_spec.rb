@@ -18,7 +18,7 @@ module Weathervane
       end
 
       it "gets forecasts from smhi" do
-        Weathervane::Providers::Smhi.stub(:get_forecasts).and_return(['foo'])
+        Weathervane::Providers::SMHI.stub(:get_forecasts).and_return(['foo'])
         get 'show_for_provider', provider: "smhi", lat: 10, lon: 10
         expect(assigns(:forecasts)).to eq ["foo"]
       end

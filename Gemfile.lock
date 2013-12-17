@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     weathervane (0.0.1)
+      geocoder
       jbuilder
       nokogiri
       nori
@@ -54,6 +55,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    geocoder (1.1.9)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)

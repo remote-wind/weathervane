@@ -1,32 +1,15 @@
+# Adapter for Swedish Meteorological and Hydrological Institute
+# ! This API is a beta.
 require 'net/http'
-
 module Weathervane
-
   module Providers
-    class Smhi < Weathervane::ForecastProvider
+    class SMHI < Weathervane::ForecastProvider
       self.table_name = "forecast_providers"
+      self.uri_template = "http://opendata-download-metfcst.smhi.se/api/category/pmp1g/version/1/geopoint/lat/%s/lon/%s/data.json"
 
-      URI_TEMPLATE = "http://opendata-download-metfcst.smhi.se/api/category/pmp1g/version/1/geopoint/lat/%s/lon/%s/data.json"
-
-      def self.get_forecasts(lat, lon)
-
-        uri = URI.encode( URI_TEMPLATE % [lat, lon])
-        response = Net::HTTP.get_response(URI(uri))
-
-        case response
-          when Net::HTTPSuccess then
-            if response.body
-              self.parse_forecasts(response.body)
-            end
-          # @todo handle error responses
-          else
-        end
-      end
-
-      def self.parse_forecasts response
-
+      def extract_forecasts data
         begin
-          data = JSON.parse response
+          data = JSON.parse data
         rescue JSON::ParserError => e
           # @todo re-raise and log error
         end

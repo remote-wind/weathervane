@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215235900) do
+ActiveRecord::Schema.define(version: 20131216184740) do
 
   create_table "forecast_providers", force: true do |t|
     t.string   "name"
@@ -38,5 +38,15 @@ ActiveRecord::Schema.define(version: 20131215235900) do
 
   add_index "forecasts", ["forecast_provider_id"], name: "index_forecasts_on_forecast_provider_id"
   add_index "forecasts", ["forecast_provider_name"], name: "index_forecasts_on_forecast_provider_name"
+
+  create_table "weathervane_places", force: true do |t|
+    t.string   "name"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "weathervane_places", ["name"], name: "index_weathervane_places_on_name"
 
 end

@@ -20,6 +20,7 @@ a common forecast model. Thus abstracting out the complexity of dealing with var
   s.add_dependency "nokogiri"
   s.add_dependency "nori"
   s.add_dependency "jbuilder"
+  s.add_dependency "geocoder"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "guard-rspec"
