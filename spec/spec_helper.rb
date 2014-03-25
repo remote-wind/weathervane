@@ -20,6 +20,9 @@ Spork.each_run do
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+
+  include FactoryGirl::Syntax::Methods
+
   # This code will be run each time you run your specs.
   # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
   RSpec.configure do |config|
