@@ -43,6 +43,8 @@ group :development, :test do
   gem "terminal-notifier-guard", "~> 1.5.3", require: false
   # factory_girl provides a framework and DSL for defining and using factories.
   gem "factory_girl_rails", "~> 4.4.1"
+  # Matchers to make model specs easy on the fingers and eyes
+  gem "shoulda-matchers", "~> 2.5.0"
 end
 
 group :doc do

@@ -159,6 +159,8 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    shoulda-matchers (2.5.0)
+      activesupport (>= 3.0.0)
     slop (3.4.7)
     spork (1.0.0rc4)
     spork-rails (4.0.0)
@@ -202,5 +204,6 @@ DEPENDENCIES
   rails (= 4.0.3)
   rspec-rails
   sdoc
+  shoulda-matchers (~> 2.5.0)
   spork-rails (~> 4.0.0)
   terminal-notifier-guard (~> 1.5.3)
