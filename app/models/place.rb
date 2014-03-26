@@ -15,4 +15,7 @@ class Place
   validates_presence_of :name, :country, :district
   validates_numericality_of :lat, :lon, :geoname_id
   validates_format_of :country_code, with: /\A[a-zA-Z]{2}\Z/
+
+  embedded_in :forecast
+
 end
