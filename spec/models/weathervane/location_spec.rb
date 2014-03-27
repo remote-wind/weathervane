@@ -13,13 +13,11 @@ describe Weathervane::Location do
   it { should allow_value("AA").for(:country_code) }
   it { should_not allow_value("AC721A").for(:country_code) }
 
-
   before(:each) do
     # Stub geonames lookup with Webmock
     stub_request(:any, Regexp.new(Regexp.quote('http://api.geonames.org/findNearbyPlaceNameJSON')))
     .to_return(:body => IO::read("#{Rails.root}/spec/mock_responses/geonames.json"), :status => 200)
   end
-
 
   describe ".get_reverse_lookup" do
 
