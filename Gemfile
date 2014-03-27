@@ -22,29 +22,31 @@ gem "dotenv", "~> 0.10.0"
 
 group :development do
   # Provides a better error page for Rails and other Rack apps.
-  gem 'better_errors', '~> 1.1.0'
+  gem 'better_errors', '~> 1.1.0', require: false
   # Page loading speed displayed on every page.
-  gem 'miniprofiler', '~> 0.1.7.4'
+  gem 'miniprofiler', '~> 0.1.7.4', require: false
   # Sends meta headers for RailsPanel in google chrome
-  gem 'meta_request'
+  gem 'meta_request', require: false
   # Annotate models
-  gem 'annotate'
+  gem 'annotate', require: false
 end
 
 group :development, :test do
   # BDD for Ruby
   gem "rspec-rails" #, "~> 2.14.1"
   # A forking Drb spec server
-  gem "spork-rails", "~> 4.0.0"
+  gem "spork-rails", "~> 4.0.0", require: false
   # Guard is a command line tool to easily handle events on file system modifications.
-  gem "guard-spork", "~> 1.5.1"
-  gem "guard-rspec", "~> 4.2.8"
+  gem "guard-spork", "~> 1.5.1", require: false
+  gem "guard-rspec", "~> 4.2.8", require: false
   # Show test status indicators on Mac OS X
   gem "terminal-notifier-guard", "~> 1.5.3", require: false
   # factory_girl provides a framework and DSL for defining and using factories.
   gem "factory_girl_rails", "~> 4.4.1"
   # Matchers to make model specs easy on the fingers and eyes
   gem "shoulda-matchers", "~> 2.5.0"
+  # WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
+  gem 'webmock', '~> 1.17.4'
 end
 
 group :doc do
