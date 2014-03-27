@@ -22,17 +22,17 @@ class Weathervane::Forecast
   # @param location Weathervane::Location
   # @param location Weathervane::Provider
   # @return array
-  def self.get_forecasts(location, provider)
+  def self.get_forecasts(location, provider = nil)
     raise Weathervane::Errors::NotImplementedError, "#{self.name} must implement the class method get_forecasts"
   end
 
-  # Subclasses should implement new_from_provider_response with the following signature
+  # Subclasses should implement create_from_provider_response with the following signature
   # @param location Weathervane::Location
   # @param provider Weathervane::Provider
   # @param response OpenStruct
   # @return Weathervane::Forecast
-  def self.new_from_provider_response(location, provider, response)
-    raise Weathervane::Errors::NotImplementedError, "#{self.name} must implement the class method new_from_provider_response"
+  def self.create_from_provider_response(location, provider, response)
+    raise Weathervane::Errors::NotImplementedError, "#{self.name} must implement the class method create_from_provider_response"
   end
 
 end

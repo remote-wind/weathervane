@@ -7,6 +7,9 @@ require 'ostruct'
 class Weathervane::Location
   include Mongoid::Document
 
+  # Relations
+  has_many :forecasts, class_name: 'Weathervane::Forecast'
+
   # Fields
   field :name, type: String
   field :lat, type: Float

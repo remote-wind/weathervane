@@ -25,11 +25,11 @@ describe Weathervane::Forecast do
   end
 
 
-  describe ".new_from_provider_response" do
+  describe ".create_from_provider_response" do
     it "should raise a NotImplementedError" do
       expect {
-        Weathervane::Forecast.new_from_provider_response(nil, nil, nil)
-      }.to raise_error(Weathervane::Errors::NotImplementedError, /must implement the class method new_from_provider_response/)
+        Weathervane::Forecast.create_from_provider_response(nil, nil, nil)
+      }.to raise_error(Weathervane::Errors::NotImplementedError, /must implement the class method create_from_provider_response/)
     end
   end
 
