@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Forecast do
+describe Weathervane::Forecast do
 
   it { should respond_to :created_at }
   it { should respond_to :valid_from }

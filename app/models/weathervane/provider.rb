@@ -1,4 +1,4 @@
-class Provider
+class Weathervane::Provider
   include Mongoid::Document
   field :name, type: String
 

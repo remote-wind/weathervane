@@ -1,4 +1,4 @@
-class Forecast
+class Weathervane::Forecast
   include Mongoid::Document
   include Mongoid::Timestamps::Created # Adds created_at field
 

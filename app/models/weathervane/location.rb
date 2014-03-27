@@ -1,5 +1,5 @@
 # Places are used to cache geocode responses for services that require a reverse lookup
-class Place
+class Weathervane::Location
   include Mongoid::Document
 
   # Fields

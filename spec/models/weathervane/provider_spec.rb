@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Provider do
+describe Weathervane::Provider do
 
   it { should respond_to :name }
 

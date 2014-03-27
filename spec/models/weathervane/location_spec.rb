@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Place do
+describe Weathervane::Location do
 
   it { should validate_presence_of :name }
   it { should validate_presence_of :district }
