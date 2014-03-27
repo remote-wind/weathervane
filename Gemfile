@@ -6,6 +6,10 @@ gem 'rails', '4.0.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Addressable is a replacement for the URI implementation that is part of Ruby's standard library.
+# It more closely conforms to the relevant RFCs and adds support for IRIs and URI templates.
+gem 'addressable', '~> 2.3.6'
+
 # ===== DB ===============================================================================
 
 # Ruby Object Mapper for Mongo
@@ -13,9 +17,6 @@ gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
 
 #C extensions to accelerate the Ruby BSON serialization.
 gem 'bson_ext'
-
-#Loads environment variables from .env file
-gem "dotenv", "~> 0.10.0"
 
 
 # ===== Test & Development ===============================================================
@@ -32,6 +33,8 @@ group :development do
 end
 
 group :development, :test do
+  #Loads environment variables from .env file
+  gem 'dotenv', '~> 0.10.0'
   # BDD for Ruby
   gem "rspec-rails" #, "~> 2.14.1"
   # A forking Drb spec server

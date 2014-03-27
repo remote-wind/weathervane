@@ -1,0 +1,19 @@
+// http://api.geonames.org/findNearbyPlaceNameJSON?lat=63.40&lng=13.08&username=demo&formatted=true
+{"geonames": [{
+    "countryId": "2661886",
+    "adminCode1": "07",
+    "countryName": "Sweden",
+    "fclName": "city, village,...",
+    "countryCode": "SE",
+    "lng": "13.08019",
+    "fcodeName": "seat of a second-order administrative division",
+    "distance": "0.1837",
+    "toponymName": "Åre",
+    "fcl": "P",
+    "name": "Åre",
+    "fcode": "PPLA2",
+    "geonameId": 2725432,
+    "lat": "63.39835",
+    "adminName1": "Jämtland",
+    "population": 1260
+}]}

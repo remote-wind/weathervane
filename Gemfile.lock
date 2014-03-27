@@ -197,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable (~> 2.3.6)
   annotate
   better_errors (~> 1.1.0)
   bson_ext
