@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Weathervane</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.1/css/foundation.min.css" media="all" />
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div class="main row">
+      <h1>Weathervane</h1>
+      <%= yield %>
+    </div>
 </body>
 </html>
