@@ -36,8 +36,8 @@ class Weathervane::Forecasts::SMHI < Weathervane::Forecast
   # Convert response from SMHI to Weathervane::Forecast
   # @param location Weathervane::Location
   # @param provider Weathervane::Provider
-  # @param response OpenStruct
-  # @return Weathervane::Forecast
+  # @param response Hash
+  # @return Weathervane::Forecasts::Smhi
   def self.create_from_provider_response( location, provider, response )
 
     valid_until = Time.iso8601(response.try(:[],"validTime"))
