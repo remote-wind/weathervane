@@ -1,3 +1,5 @@
+# Adapter for Swedish Meteorological and Hydrological Institute forecast API pmp1.5g
+# @see http://www.smhi.se/klimatdata/Oppna-data/Meteorologiska-data/api-for-vaderprognosdata-1.34233
 class Weathervane::Forecasts::SMHI < Weathervane::Forecast
 
   PROVIDER_NAME = :smhi
