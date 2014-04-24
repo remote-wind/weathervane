@@ -4,7 +4,7 @@
 <p>Get a list of available providers</p>
 
 <h3>Request format</h3>
-<p><code><%= root_url %>/providers.json</code></p>
+<p><code><%= providers_url %></code></p>
 
 <h3>Response format</h3>
 <pre class="radius">
@@ -12,3 +12,12 @@
     [];
   }
 </pre>
+
+<h3>Providers</h3>
+<% if @providers.any? %>
+<ul>
+  <% @providers.each do |provider| %>
+  <li><%= link_to(provider.name, provider_path(provider)) %></li>
+  <% end %>
+</ul>
+<% end %>

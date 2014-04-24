@@ -1,5 +1,2 @@
-Jbuilder.encode do |json|
 
-  json.array! @providers, partial: 'providers/provider', as: :provider
-
-end
+json.partial! partial: 'providers/provider', collection: @providers, as: :provider
