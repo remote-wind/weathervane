@@ -1,7 +1,5 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :location, class: Weathervane::Location do
+  factory :location, class: "Weathervane::Location" do
     name "MyString"
     lat 1.5
     lng 1.5
