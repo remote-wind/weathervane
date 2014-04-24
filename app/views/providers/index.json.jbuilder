@@ -1,2 +1,1 @@
-
-json.partial! partial: 'providers/provider', collection: @providers, as: :provider
+json.partial! partial: 'providers/provider', collection: providers || @providers, as: :provider

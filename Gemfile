@@ -10,6 +10,9 @@ gem 'jbuilder', '~> 1.2'
 # It more closely conforms to the relevant RFCs and adds support for IRIs and URI templates.
 gem 'addressable', '~> 2.3.6'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # ===== DB ===============================================================================
 
 # Ruby Object Mapper for Mongo

@@ -1,0 +1,22 @@
+<h2>Providers web service</h2>
+
+<h3>Synopsis</h3>
+<p>Show details about a provider</p>
+
+<h3>Provider</h3>
+<dl>
+  <dt>Name</dt>
+  <dd><%= @provider.name %></dd>
+  <dt>ID</dt>
+  <dd><%= @provider.id.to_s %></dd>
+  <dt>URI</dt>
+  <dd><%= provider_url(@provider.to_param) %></dd>
+</dl>
+
+<h3>Request format</h3>
+<p><code>/providers/:id(.json)</code></p>
+
+<h3>JSON Response format</h3>
+<pre class="radius pretty_json">
+  <%= render template: "providers/show", formats: [:json] %>
+</pre>

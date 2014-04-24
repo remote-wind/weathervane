@@ -9,5 +9,16 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
+
+jQuery(document).ready(function($){
+
+    if (typeof JSON === 'object') {
+        $('.pretty_json').each(function(){
+            $(this).text(JSON.stringify(JSON.parse($(this).text()), undefined, 2 ) );
+        });
+    }
+
+});

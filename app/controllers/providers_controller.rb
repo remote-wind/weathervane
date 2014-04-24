@@ -7,4 +7,7 @@ class ProvidersController < ApplicationController
   def index
     @providers = Weathervane::Provider.all
   end
+
+
+
 end
