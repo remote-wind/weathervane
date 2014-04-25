@@ -1,5 +1,6 @@
 Weathervane::Application.routes.draw do
 
+  get "pages/home"
   resources :providers do
   end
 
