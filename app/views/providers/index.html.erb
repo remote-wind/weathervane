@@ -4,7 +4,7 @@
 <p>Get a list of available providers</p>
 
 <h3>Request format</h3>
-<p><code><%= providers_url %></code></p>
+<p><code><%= providers_url %>(.json)</code></p>
 
 <h3>Response format</h3>
 <pre class="radius pretty_json">
@@ -21,5 +21,5 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-    <li class="current"><a href="<%= providers_path %>">Providers</a></li>
+    <li class="current"><a href="<%= providers_path %>">Providers:Index</a></li>
 <% end %>

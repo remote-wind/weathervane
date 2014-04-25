@@ -23,6 +23,8 @@ describe ProvidersController do
       it "has the correct attributes" do
         expect(json["id"]).to eq provider.id.to_s
         expect(json["name"]).to eq provider.name
+        expect(json["slug"]).to eq provider.slug
+        expect(json["uri"]).to eq provider_url(provider.to_param)
       end
     end
   end
