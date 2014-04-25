@@ -12,5 +12,14 @@
       <h1>Weathervane</h1>
       <%= yield %>
     </div>
+
+    <footer class="row">
+      <nav>
+        <ul class="breadcrumbs">
+          <li><a href="<%= root_path %>">Home</a></li>
+          <%= yield :breadcrumbs %>
+        </ul>
+      </nav>
+    </footer>
 </body>
 </html>

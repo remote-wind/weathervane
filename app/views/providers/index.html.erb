@@ -1,4 +1,4 @@
-<h2>Providers web service</h2>
+<h2>Providers:Index</h2>
 
 <h3>Synopsis</h3>
 <p>Get a list of available providers</p>
@@ -18,4 +18,8 @@
   <li><%= link_to(provider.name, provider_path(provider)) %></li>
   <% end %>
 </ul>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+    <li class="current"><a href="<%= providers_path %>">Providers</a></li>
 <% end %>
