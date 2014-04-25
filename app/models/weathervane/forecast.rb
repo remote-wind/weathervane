@@ -7,6 +7,7 @@ class Weathervane::Forecast < Weathervane::WeatherUnit
   field :issued_at, type: Time
 
   # Subclasses should implement get_forecasts with the following signature
+  # @raise Weathervane::Errors::NotImplementedError
   # @param location Weathervane::Location
   # @param location Weathervane::Provider
   # @return array
@@ -16,6 +17,7 @@ class Weathervane::Forecast < Weathervane::WeatherUnit
   end
 
   # Subclasses should implement create_from_provider_response with the following signature
+  # @raise Weathervane::Errors::NotImplementedError
   # @param location Weathervane::Location
   # @param provider Weathervane::Provider
   # @param response Hash

@@ -6,7 +6,7 @@ describe Weathervane::Seeds do
     describe ".seed" do
       it "creates SMHI" do
         Weathervane::Seeds::Providers.seed
-        expect(Weathervane::Provider.where(name: 'SMHI').count).to eq 1
+        expect(Weathervane::Provider.find('smhi')).to be_a Weathervane::Providers::SMHI
       end
     end
   end

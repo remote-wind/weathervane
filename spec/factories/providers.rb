@@ -5,4 +5,10 @@ FactoryGirl.define do
     name "McWeather"
     slug "mcweather"
   end
+
+  factory :smhi_provider, class: "Weathervane::Providers::SMHI" do
+    name "Swedish Metrological and Hydrological Institure"
+    slug "smhi"
+  end
+
 end
