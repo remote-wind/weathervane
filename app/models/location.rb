@@ -4,11 +4,11 @@ require 'net/http'
 require 'json'
 require 'ostruct'
 
-class Weathervane::Location
+class Location
   include Mongoid::Document
 
   # Relations
-  has_many :forecasts, class_name: 'Weathervane::Forecast'
+  has_many :forecasts, class_name: 'Forecast'
 
   # Fields
   field :name, type: String
@@ -50,7 +50,7 @@ class Weathervane::Location
 
   # Create location from Geonames.org reverse geocode lookup
   # @param response OpenStruct
-  # @return Weathervane::Location
+  # @return Location
   def self.new_from_geonames( response )
     self.new({
         name: response.try("toponymName"),
@@ -66,7 +66,7 @@ class Weathervane::Location
   # Check DB if location is cached otherwise do reverse lookup and store location
   # @param lat
   # @param lng
-  # @return Weathervane::Location || nil - returns nil if lookup failed
+  # @return Location || nil - returns nil if lookup failed
   def self.find_or_create_by_lat_lng(lat, lng)
 
     begin

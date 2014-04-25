@@ -1,10 +1,10 @@
 # Defines base attributes common to both observations and forecasts
-class Weathervane::WeatherUnit
+class WeatherUnit
 
   include Mongoid::Document
 
-  belongs_to :provider, class_name: 'Weathervane::Provider'
-  belongs_to :location, class_name: 'Weathervane::Location'
+  belongs_to :provider, class_name: 'Provider'
+  belongs_to :location, class_name: 'Location'
 
   field :speed, type: Float # M/S
   field :gust, type: Float # M/S

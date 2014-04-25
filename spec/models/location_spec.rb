@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'json'
 require 'ostruct'
 
-describe Weathervane::Location do
+describe Location do
 
   it { should validate_presence_of :name }
   it { should validate_presence_of :district }
@@ -24,7 +24,7 @@ describe Weathervane::Location do
     context "when request is OK" do
 
       it "should return an OpenStruct" do
-        expect(Weathervane::Location.get_reverse_lookup(1,1)).to be_a_kind_of OpenStruct
+        expect(Location.get_reverse_lookup(1,1)).to be_a_kind_of OpenStruct
       end
     end
   end
@@ -36,7 +36,7 @@ describe Weathervane::Location do
       @response = OpenStruct.new( JSON.parse(@response)["geonames"].first )
     end
 
-    subject(:location) { Weathervane::Location.new_from_geonames(@response) }
+    subject(:location) { Location.new_from_geonames(@response) }
     its(:name) { should eq "Åre" }
     its(:country) { should eq "Sweden"}
     its(:country_code) { should eq "SE"}
@@ -53,18 +53,18 @@ describe Weathervane::Location do
       let!(:location) { create(:location, lat: 1, lng: 1 ) }
 
       it "should return the correct location" do
-        expect(Weathervane::Location.find_or_create_by_lat_lng(1,1).id).to eq location.id
+        expect(Location.find_or_create_by_lat_lng(1,1).id).to eq location.id
       end
     end
 
     context "when location does not exist" do
 
-      let(:location) { Weathervane::Location.find_or_create_by_lat_lng(1,1) }
+      let(:location) { Location.find_or_create_by_lat_lng(1,1) }
 
       it "should create a location" do
         expect {
-          Weathervane::Location.find_or_create_by_lat_lng(2,2)
-        }.to change(Weathervane::Location, :count).by(1)
+          Location.find_or_create_by_lat_lng(2,2)
+        }.to change(Location, :count).by(1)
       end
     end
   end

@@ -1,4 +1,4 @@
-class Weathervane::Provider
+class Provider
   include Mongoid::Document
   include Mongoid::Slug
 
@@ -13,7 +13,7 @@ class Weathervane::Provider
   validates_uniqueness_of :name
 
   # Relations
-  has_many :forecasts, class_name: 'Weathervane::Forecast'
+  has_many :forecasts, class_name: 'Forecast'
 
   SERVICES = {}
 

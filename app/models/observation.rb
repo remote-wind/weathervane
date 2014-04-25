@@ -1,5 +1,5 @@
 # Represents actual weather observations gathered by a provider for a given location
-class Weathervane::Observation < Weathervane::WeatherUnit
+class Observation < WeatherUnit
 
   include Mongoid::Timestamps::Created
 

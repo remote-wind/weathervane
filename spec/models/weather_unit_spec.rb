@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-describe Weathervane::WeatherUnit do
-
+describe WeatherUnit do
   it_behaves_like "a weather unit"
-
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'json'
 require 'ostruct'
 
-describe Weathervane::Forecasts::SMHI do
+describe Forecasts::SMHI do
 
   let(:data) { IO::read("#{Rails.root}/spec/mock_responses/smhi_forecast.json") }
   let(:provider) { build_stubbed(:provider) }
@@ -10,13 +10,13 @@ describe Weathervane::Forecasts::SMHI do
 
   before(:each) do
     # Stub geonames lookup with Webmock
-    stub_request(:any, Regexp.new(Regexp.quote(Weathervane::Forecasts::SMHI::API_BASE_URI)))
+    stub_request(:any, Regexp.new(Regexp.quote(Forecasts::SMHI::API_BASE_URI)))
       .to_return(body: data, status: 200)
   end
 
   describe ".get_forecasts" do
 
-    let(:forecasts) { Weathervane::Forecasts::SMHI.get_forecasts(build_stubbed(:location, lat: 10, lng: 10)) }
+    let(:forecasts) { Forecasts::SMHI.get_forecasts(build_stubbed(:location, lat: 10, lng: 10)) }
 
     it "should request the correct url" do
       forecasts
@@ -27,7 +27,7 @@ describe Weathervane::Forecasts::SMHI do
     it "should create forecasts from json response" do
       expect {
         forecasts
-      }.to change(Weathervane::Forecasts::SMHI, :count).by(3)
+      }.to change(Forecasts::SMHI, :count).by(3)
     end
 
     it "should return forecasts" do
@@ -45,7 +45,7 @@ describe Weathervane::Forecasts::SMHI do
     end
 
     subject do
-      Weathervane::Forecasts::SMHI.create_from_provider_response(location, provider, response)
+      Forecasts::SMHI.create_from_provider_response(location, provider, response)
     end
 
     its(:issued_at) { should eq Time.iso8601("2014-03-27T10:00:00Z") }
