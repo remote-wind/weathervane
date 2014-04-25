@@ -23,13 +23,13 @@ git clone git@github.com:remote-wind/weathervane.git
 bundle install
 ```
 
-== Configuration
+## Configuration
 The development and test environments use [dotenv](https://github.com/bkeepers/dotenv) to load environment vars from a
 .env file located in the root directory. This can be used to configure DB connections among other things.
 
 See .env.dist for details.
 
-== Testing
+## Testing
 This app uses rspec and guard.
 
 NB! You should start the mongodb server (`mongod`) before running specs
