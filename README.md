@@ -1,4 +1,4 @@
-= Weathervane
+# Weathervane
 
 Weathervane is a rails app that provides forecasts and observations from different sources with a unified API.
 This removes some of the complexity of dealing with various providers.
@@ -6,14 +6,14 @@ This removes some of the complexity of dealing with various providers.
 It is self documenting in that requesting any API action as html (IE opening it in a browser without .json extension)
 will show a documentation page.
 
-== Ruby version
+## Ruby version
 tested on `Ruby(MRI) 2.1.0p0`
 
 
-== System dependencies
+## System dependencies
 [MongoDB](https://www.mongodb.org/) v 2.4.9
 
-== Installation
+## Installation
 
 ```
 git clone git@github.com:remote-wind/weathervane.git
@@ -34,11 +34,12 @@ This app uses rspec and guard.
 
 NB! You should start the mongodb server (`mongod`) before running specs
 
+### Continuous testing
 ```
-# Continuous testing
 guard
-
-# run tests once
+```
+### run specs once
+```
 rspec spec
 ```
 
