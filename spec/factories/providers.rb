@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :provider, class: "Weathervane::Provider" do
     name "McWeather"
+    slug "mcweather"
   end
 end

@@ -6,12 +6,13 @@ describe ProvidersController do
   let(:provider) { create(:provider) }
 
   describe "GET 'show'" do
-    it "returns http success" do
-      get :show, id: provider.to_param
+
+    it "can find provider from slug" do
+      get :show, id: provider.slug
       expect(response).to be_success
     end
 
-    context "as json" do
+    context "as JSON" do
       render_views
 
       let(:json) do
@@ -24,7 +25,6 @@ describe ProvidersController do
         expect(json["name"]).to eq provider.name
       end
     end
-
   end
   
   describe "GET 'index'" do
@@ -36,7 +36,7 @@ describe ProvidersController do
       expect(response).to be_success
     end
 
-    context "as json" do
+    context "as JSON" do
       render_views
 
       let(:json) do
@@ -54,6 +54,5 @@ describe ProvidersController do
         expect(json.first["id"]).to eq providers.first.id.to_s
       end
     end
-
   end
 end
