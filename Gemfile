@@ -21,6 +21,9 @@ gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
 #C extensions to accelerate the Ruby BSON serialization.
 gem 'bson_ext'
 
+# Mongoid URL slug or permalink generator
+gem 'mongoid_slug', '~> 3.2.1'
+
 
 # ===== Test & Development ===============================================================
 

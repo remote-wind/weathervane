@@ -3,7 +3,6 @@
 class Weathervane::Forecasts::SMHI < Weathervane::Forecast
 
   PROVIDER_NAME = :smhi
-
   API_BASE_URI = 'http://opendata-download-metfcst.smhi.se/api/category/pmp1.5g/version/1/geopoint'
 
   # Get forecasts from SMHI webservice
@@ -33,11 +32,11 @@ class Weathervane::Forecasts::SMHI < Weathervane::Forecast
 
   end
 
-  # Convert response from SMHI to Weathervane::Forecast
+  # Create forecast from API response
   # @param location Weathervane::Location
   # @param provider Weathervane::Provider
   # @param response Hash
-  # @return Weathervane::Forecasts::Smhi
+  # @return Weathervane::Forecasts::SMHI
   def self.create_from_provider_response( location, provider, response )
 
     valid_until = Time.iso8601(response.try(:[],"validTime"))
