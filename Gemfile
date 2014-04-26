@@ -40,7 +40,7 @@ end
 
 group :development, :test do
   #Loads environment variables from .env file
-  gem 'dotenv', '~> 0.10.0'
+  gem 'dotenv-rails', '~> 0.10.0'
   # BDD for Ruby
   gem "rspec-rails" #, "~> 2.14.1"
   # A forking Drb spec server

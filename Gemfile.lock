@@ -60,6 +60,8 @@ GEM
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     dotenv (0.10.0)
+    dotenv-rails (0.10.0)
+      dotenv (= 0.10.0)
     erubis (2.7.0)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -206,7 +208,7 @@ DEPENDENCIES
   annotate
   better_errors (~> 1.1.0)
   bson_ext
-  dotenv (~> 0.10.0)
+  dotenv-rails (~> 0.10.0)
   factory_girl_rails (~> 4.4.1)
   guard-rspec (~> 4.2.8)
   guard-spork (~> 1.5.1)
