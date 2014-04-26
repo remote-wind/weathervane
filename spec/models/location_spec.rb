@@ -20,9 +20,7 @@ describe Location do
   end
 
   describe ".get_reverse_lookup" do
-
     context "when request is OK" do
-
       it "should return an OpenStruct" do
         expect(Location.get_reverse_lookup(1,1)).to be_a_kind_of OpenStruct
       end
@@ -47,20 +45,14 @@ describe Location do
   end
 
   describe ".find_or_create_by_lat_lng" do
-
     context "if location previously exists" do
-
       let!(:location) { create(:location, lat: 1, lng: 1 ) }
-
       it "should return the correct location" do
         expect(Location.find_or_create_by_lat_lng(1,1).id).to eq location.id
       end
     end
-
     context "when location does not exist" do
-
       let(:location) { Location.find_or_create_by_lat_lng(1,1) }
-
       it "should create a location" do
         expect {
           Location.find_or_create_by_lat_lng(2,2)
