@@ -10,7 +10,7 @@ module Weathervane
 
     def or default
       return default if self.nil?
-      self.to_bool if default.is_a?(Boolean)
+      return self.to_bool if default.is_a?(Boolean)
       self
     end
 

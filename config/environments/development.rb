@@ -18,7 +18,7 @@ Weathervane::Application.configure do
   config.action_mailer.raise_delivery_errors = env[:CONFIG_ACTION_MAILER_RAISE_DELIVERY_ERROR].or false
 
   # Print deprecation notices to the Rails logger.
-  config.active_support.deprecation = env[:CONFIG_ACTIVE_SUPPORT_DEPRECATION].or(:log).to_s
+  config.active_support.deprecation = env[:CONFIG_ACTIVE_SUPPORT_DEPRECATION].or(:log).to_sym
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
