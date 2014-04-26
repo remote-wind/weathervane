@@ -4,10 +4,10 @@ class Provider
 
   # Fields
   field :name, type: String
-  slug :slug, history: false
 
-  # Virtual atttributes
-  attr_accessor :slug
+  # Use non-persisted attribute for Mongoid::Slug
+  attr_accessor :_slug
+  slug :_slug, history: false
 
   # Validations
   validates_uniqueness_of :name

@@ -10,7 +10,7 @@ describe Providers::SMHI do
     end
 
     it "gives the correct slug" do
-      expect(Providers::SMHI.attributes_for[:slug]).to eq "smhi"
+      expect(Providers::SMHI.attributes_for[:_slug]).to eq "smhi"
     end
 
   end
@@ -27,7 +27,7 @@ describe Providers::SMHI do
     it "overrides .new" do
       provider = Providers::SMHI.new
       expect(provider.name).to eq "Swedish Metrological and Hydrological Institure"
-      expect(provider.slug).to eq "smhi"
+      expect(provider._slug).to eq "smhi"
     end
   end
 

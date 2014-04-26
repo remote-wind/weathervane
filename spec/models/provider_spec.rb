@@ -6,7 +6,7 @@ describe Provider do
   it { should respond_to :forecasts }
 
   it "should have the correct slug" do
-    provider = Provider.create(name: "foobar", slug: 'foo')
+    provider = Provider.create(name: "foobar", _slug: 'foo')
     expect(provider._slugs.first).to eq "foo"
   end
 

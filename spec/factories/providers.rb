@@ -3,12 +3,12 @@
 FactoryGirl.define do
   factory :provider, class: "Provider" do
     name "McWeather"
-    slug "mcweather"
+    _slug "mcweather"
   end
 
   factory :smhi_provider, class: "Providers::SMHI" do
     name "Swedish Metrological and Hydrological Institure"
-    slug "smhi"
+    _slug "smhi"
   end
 
 end

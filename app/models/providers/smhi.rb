@@ -7,7 +7,7 @@ module Providers
     def self.attributes_for
       {
           name: "Swedish Metrological and Hydrological Institure",
-          slug: "smhi"
+          _slug: "smhi"
       }
     end
   end
