@@ -29,7 +29,7 @@ gem 'mongoid_slug', '~> 3.2.1'
 
 group :development do
   # Provides a better error page for Rails and other Rack apps.
-  gem 'better_errors', '~> 1.1.0', require: false
+  gem 'better_errors', '~> 1.1.0'
   # Page loading speed displayed on every page.
   gem 'miniprofiler', '~> 0.1.7.4', require: false
   # Sends meta headers for RailsPanel in google chrome
@@ -56,6 +56,8 @@ group :development, :test do
   gem "shoulda-matchers", "~> 2.5.0"
   # WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
   gem 'webmock', '~> 1.17.4'
+  # Capybara is an integration testing tool for rack based web applications.
+  gem 'capybara', '~> 2.2.1'
 end
 
 group :doc do

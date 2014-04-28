@@ -27,6 +27,39 @@ describe ProvidersController do
         expect(json["uri"]).to eq provider_url(provider.to_param)
       end
     end
+
+    context "when provider is not found" do
+
+      context "as HTML" do
+
+        before(:each) { get :show, id: "does_not_exist" }
+
+        it "returns 404" do
+          expect(response.code).to eq "404"
+        end
+
+        it "assigns the correct @header" do
+          expect(assigns(:header)).to eq "Provider could not be found"
+        end
+
+        it "assigns the correct @message" do
+          expect(assigns(:message)).to eq "Sorry, could not find provider with the ID or SLUG 'does_not_exist'"
+        end
+
+      end
+
+      context "as JSON" do
+        render_views
+        let(:json) do
+          get :show, format: "json", id: "does_not_exist"
+          JSON.parse(response.body)
+        end
+
+        it "includes an error message" do
+          expect(json["error"]["message"]).to eq "Sorry, could not find provider with the ID or SLUG 'does_not_exist'"
+        end
+      end
+    end
   end
   
   describe "GET 'index'" do
@@ -57,4 +90,5 @@ describe ProvidersController do
       end
     end
   end
+
 end
